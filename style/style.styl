@@ -1,0 +1,300 @@
+@import "normalize.styl"
+@import "variables.styl"
+@import "fonts.styl"
+@import "media.styl"
+
+
+
+body
+    margin 0 auto
+    box-sizing border-box
+    font-size 14px
+    color $main-text-color
+
+.header
+    height: 666px;
+    min-height 400px;
+.container
+    margin 0 auto
+    max-width 960px
+    width 100%
+
+.nav-container
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display flex
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content space-between
+    padding 0.9375rem 0 0.9375rem
+    position relative
+    z-index 99999
+
+
+.logo 
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    
+
+
+.nav-menu
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display flex
+    max-width 550px
+    width 100%
+    justify-content space-between
+    li
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        list-style-type none
+
+.nav-menu__link 
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    text-decoration none
+    font-family RobotoBlack
+    font-size 13px
+    color #FFF
+    text-transform uppercase
+
+
+.active-link
+    color $button-color
+
+.nav-menu__link:hover
+    color $button-color
+
+
+/* Slider wrapper*/
+.slider-container 
+    display: block;
+    background: #FFF;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+
+/* Slider */
+.slider 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    z-index: 0;
+    
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    flex-direction: row;
+    flex-wrap: wrap;
+    -webkit-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    
+    -webkit-transition: -webkit-transform 1600ms;
+    transition: -webkit-transform 1600ms, transform 1600ms;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    
+
+/* each slide background color */ 
+.slide1 
+    background-image: url('../assets/first-bg.png');
+    left: 0;
+
+
+.slide2 
+    background-image: url('../assets/first-bg.png');
+    left: 100%
+
+
+.slide3 
+    background-image: url('../assets/first-bg.png');
+    left: 200%
+
+.slide4 
+    background-image: url('../assets/first-bg.png');
+    left: 300%;
+
+.slider > .slide-content
+    text-align: center;
+    max-width 780px
+    width 100%
+
+
+
+/* Slider inner content */
+.slider-content__title
+    color: #FFF;
+    font-family PlayFairBlack
+    text-transform capitalize
+    font-size: 32px;
+    word-spacing: 5px;
+    -webkit-transform: translateX(500px);
+    transform: translateX(500px);
+
+.slide-content__separator
+    width 50px
+    color $button-color
+
+.slider-content__text
+    font-family RobotoLight
+    color #FFF
+    word-spacing: 5px;
+    line-height: 1.5;
+    margin-top 30px 
+    margin-bottom 53px
+
+
+.slider .slider-btn
+    color $button-color
+    padding: 15px 14px
+    font-family HammerReqular
+    text-transform uppercase
+    font-size: 16px;
+    background: inherit;
+    border: 1px solid $button-color
+    border-radius 1px
+    font-weight: 600;
+    opacity 0
+    -webkit-transform: translateX(-500px);
+    transform: translateX(-500px);
+
+.slider .slider-content__title, .slider .slider-btn
+    -webkit-transition: opacity 800ms, -webkit-transform 800ms;
+    transition: transform 800ms, opacity 800ms;
+    -webkit-transition-delay: 1s; /* Safari */
+    transition-delay: 1s;
+
+/* Slider pagination */ 
+.slider-pagination 
+    position: absolute;
+    bottom: 60px;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    z-index: 1000;
+
+.slider-pagination label 
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    margin: 0 2px;
+    border: solid 1px rgba(255,255,255,0.4);
+    cursor: pointer;
+    
+    
+/* Slider control active css */
+.slide-radio1:checked ~ .next .numb2, 
+.slide-radio2:checked ~ .next .numb3, 
+.slide-radio3:checked ~ .next .numb4, 
+.slide-radio2:checked ~ .previous .numb1, 
+.slide-radio3:checked ~ .previous .numb2, 
+.slide-radio4:checked ~ .previous .numb3 
+    display: block;
+    z-index: 1
+
+
+/* Slider pagination active css */
+.slide-radio1:checked ~ .slider-pagination .page1, 
+.slide-radio2:checked ~ .slider-pagination .page2, 
+.slide-radio3:checked ~ .slider-pagination .page3, 
+.slide-radio4:checked ~ .slider-pagination .page4 
+    background: rgba(255,255,255,1)
+
+/* css for sliding  effect when you click on control button*/
+.slide-radio1:checked ~ .slider 
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+
+.slide-radio2:checked ~ .slider 
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+
+.slide-radio3:checked ~ .slider 
+    -webkit-transform: translateX(-200%);
+    transform: translateX(-200%);
+
+.slide-radio4:checked ~ .slider 
+    -webkit-transform: translateX(-300%);
+    transform: translateX(-300%);
+
+
+.slide-radio1:checked ~ .slide1 .slider-content__title, 
+.slide-radio2:checked ~ .slide2 .slider-content__title, 
+.slide-radio3:checked ~ .slide3 .slider-content__title, 
+.slide-radio4:checked ~ .slide4 .slider-content__title, 
+.slide-radio1:checked ~ .slide1 .slider-btn 
+.slide-radio2:checked ~ .slide2 .slider-btn 
+.slide-radio3:checked ~ .slide3 .slider-btn 
+.slide-radio4:checked ~ .slide4 .slider-btn 
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1
+
+
+.about
+    padding 70px 0 70px
+    background #FFF
+
+.about-container
+    display flex
+    justify-content space-between
+    flex-wrap wrap
+
+
+.about-container__content
+    max-width 540px
+    width 100%
+
+
+.about-container__content-title
+    font-family PlayFairBold
+    font-size 22px
+    color $main-text-color
+
+.about-container__content-text
+    color $main-text-color
+    font-family RobotoLight
+
+.main-style-btn 
+    color $button-color
+    padding: 15px 14px
+    font-family HammerReqular
+    text-transform uppercase
+    font-size: 16px;
+    background: inherit;
+    border: 1px solid $button-color
+    border-radius 1px
+    font-weight: 600;
+
+.mt30
+    margin-top: 30px;
+

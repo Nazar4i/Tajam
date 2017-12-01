@@ -1,0 +1,85 @@
+@import "variables.styl"
+
+@media screen and (max-width: 992px)
+    .nav-menu
+        padding-right 20px
+    
+    .logo
+        padding-left 20px
+
+    
+
+   
+
+@media screen and (max-width: 768px)
+    
+    .nav-container 
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        text-align: center;
+  
+  
+    #nav-menu-button 
+        cursor: pointer;
+        margin-right 20px
+        color $button-color
+  
+  
+    .nav-menu
+        display: block;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        direction: rtl;
+        overflow-y: scroll;
+        max-height: 80vh;
+        max-width 768px!important
+        margin-top 30px
+        background #2c2749
+        
+
+    .logo
+        margin-bottom: -30px;
+    
+    .hide-ul 
+        max-height: 0vh;
+        
+  
+    .nav-menu__link  
+        padding: 1rem 0;
+        font-size: 1.3rem;
+        border-bottom: 1px solid #f4f4f4;
+        font-size: 20px!important
+
+    .slider h2 
+        font-size: 26px;
+
+    .slider > div 
+        padding: 0 2%
+
+    .control label 
+        font-size: 35px;
+
+    .slider-btn
+        padding: 15px 14px;
+    
+
+    .about-container
+        display flex !important
+        justify-content center !important
+        text-align center
+
+  
+
+@media screen and (min-width: 769px) 
+    #nav-menu-button 
+        display: none;
+    
+    
+    
+
